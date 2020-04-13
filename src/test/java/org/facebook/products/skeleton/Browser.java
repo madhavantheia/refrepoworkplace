@@ -1,17 +1,16 @@
 package org.facebook.products.skeleton;
 
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class Browser {
     private WebDriver driver;
     @Test
-    public void testEasy() {
+    public void examinePageTitle() {
         driver.get("https://www.workplace.com/");
         String title = driver.getTitle();
         System.out.println(title);
