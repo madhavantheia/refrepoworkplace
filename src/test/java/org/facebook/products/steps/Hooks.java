@@ -17,7 +17,7 @@ public class Hooks {
         ChromeOptions cOptions = new ChromeOptions();
         cOptions.addArguments("disable-infobars");
         driver = new ChromeDriver(cOptions);
-        wait = new WebDriverWait(driver,15); //for explicit waits
+        //wait = new WebDriverWait(driver,15); //for explicit waits
         driver.manage().window().maximize();
         //driver.manage().timeouts().pageLoadTimeout(10000, TimeUnit.MILLISECONDS); //time out for the page in browser
         //driver = new ChromeDriver();
