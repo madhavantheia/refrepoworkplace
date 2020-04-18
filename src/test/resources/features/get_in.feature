@@ -3,7 +3,7 @@ Feature: Get into Workplace
   As a workplace user, I would like to access my News Feed
 
   Background: Jump to workplace portal and confirm Log In button presence
-    Given I am on Workplace portal using url "https://www.workplace.com/"
+    Given I am on Workplace portal using url "https://www.workplace.com"
     Then "Log In" button should be available
 
   @Successfullogin
