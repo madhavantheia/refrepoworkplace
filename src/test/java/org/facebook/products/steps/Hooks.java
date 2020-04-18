@@ -35,14 +35,15 @@ public class Hooks {
     public void screenshot_tearDown(Scenario scenario) {
 
         System.out.println("\n teardown method using @After hook");
+        driver.quit();
         // if (scenario.isFailed()) {
             try {
                 String verificationErrorString = verificationErrors.toString();
+                System.out.println("contents of verificationErrorString"+"\n\n"+verificationErrorString+"\n\n"+"End of verificationErrorString");
                 if (!"".equals(verificationErrorString))
                     fail(verificationErrorString);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        driver.quit();
     }
 }
