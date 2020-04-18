@@ -4,7 +4,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -34,14 +33,15 @@ public class GetIn {
 
     @When("Submit my username {string}")
     public void submit_my_username(String username) {
-        try {
+        /* try {
             Assert.assertTrue((Hooks.driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/section[1]/div[1]/h1")).isEnabled()),
                     "Heading element is not present");
         } catch (NoSuchElementException nee) {
             Hooks.verificationErrors.append(nee.toString());
         }
+        */
         // This try-catch ensures execution proceeds to further steps regardless of Element discovery status
-        // Also exception is appended in String Buffer object
+        // Also exception info is appended to String Buffer object
         // Hooks.wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("_87bt _13s8")));
         Hooks.wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("email")));
         Hooks.driver.findElement(By.name("email")).clear();
@@ -62,9 +62,8 @@ public class GetIn {
         System.out.println(newsFeedLabel);
         try {
             Assert.assertTrue(newsFeedLabel.contains("News Feed"), "\"News Feed\" not available");
-        }
-        catch (AssertionError ae) {
-            Hooks.verificationErrors.append("\n\n"+ae.toString());
+        } catch (AssertionError ae) {
+            Hooks.verificationErrors.append("\n\n" + ae.toString());
         }
         System.out.println("Last statement in final step; After \"News Feed\" Label Validation");
         /* In-case of try-catch last statement always executes irrespective of "News Feed" availability/status

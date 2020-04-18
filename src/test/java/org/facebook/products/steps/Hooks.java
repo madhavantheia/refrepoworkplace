@@ -22,7 +22,7 @@ public class Hooks {
         // cOptions.addArguments("disable-infobars"); // Chrome has removed "disable info-bars", so doesn't work
         System.out.println("initialization of browser using @Before hook \n");
         verificationErrors.delete(0, verificationErrors.length());
-        System.out.println("VerificationErrors from previous scenario are cleared"+verificationErrors.toString());
+        System.out.println("VerificationErrors from previous scenario are cleared" + verificationErrors.toString());
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 10); //for explicit waits
@@ -37,13 +37,13 @@ public class Hooks {
         System.out.println("\n teardown method using @After hook");
         driver.quit();
         // if (scenario.isFailed()) {
-            try {
-                String verificationErrorString = verificationErrors.toString();
-                System.out.println("contents of verificationErrorString"+"\n\n"+verificationErrorString+"\n\n"+"End of verificationErrorString");
-                if (!"".equals(verificationErrorString))
-                    fail(verificationErrorString);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            String verificationErrorString = verificationErrors.toString();
+            System.out.println("contents of verificationErrorString" + "\n\n" + verificationErrorString + "\n\n" + "End of verificationErrorString");
+            if (!"".equals(verificationErrorString))
+                fail(verificationErrorString);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
