@@ -63,7 +63,7 @@ public class GetIn {
         try {
             Assert.assertTrue(newsFeedLabel.contains("News Feed"), "\"News Feed\" not available");
         } catch (AssertionError ae) {
-            Hooks.verificationErrors.append("\n\n" + ae.toString());
+            Hooks.verificationErrors.append("\n\n").append(ae.toString());
         }
         System.out.println("Last statement in final step; After \"News Feed\" Label Validation");
         /* In-case of try-catch last statement always executes irrespective of "News Feed" availability/status

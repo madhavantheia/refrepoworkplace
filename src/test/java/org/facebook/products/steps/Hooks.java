@@ -2,7 +2,6 @@ package org.facebook.products.steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -32,9 +31,9 @@ public class Hooks {
     }
 
     @After
-    public void screenshot_tearDown(Scenario scenario) {
+    public void screenshot_tearDown(/* Scenario scenario */) {
 
-        System.out.println("\n teardown method using @After hook");
+        System.out.println("\nteardown method using @After hook\n");
         driver.quit();
         // if (scenario.isFailed()) {
         try {
