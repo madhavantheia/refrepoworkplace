@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LogonSuite">
+  <test name="WorkplaceLoginTest">
+     <classes>
+      <!-- <class name="com.ibm.connections.framework.AddNumbers"/>
+      <class name="com.ibm.connections.framework.InstallTest"/>
+      <class name="com.ibm.connections.framework.ChromeSetup"/>
+      <class name="com.ibm.connections.framework.EdgeSetup"/> 
+      <class name="com.ibm.connections.Logon.Chrome"/>
+      <class name="com.cucumber.runner.TestRunner"/> -->
+      <class name="org.facebook.products.runner.TestRunner"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

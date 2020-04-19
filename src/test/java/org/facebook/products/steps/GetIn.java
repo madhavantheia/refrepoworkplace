@@ -42,7 +42,6 @@ public class GetIn {
         */
         // This try-catch ensures execution proceeds to further steps regardless of Element discovery status
         // Also exception info is appended to String Buffer object
-        // Hooks.wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("_87bt _13s8")));
         Hooks.wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("email")));
         Hooks.driver.findElement(By.name("email")).clear();
         Hooks.driver.findElement(By.name("email")).sendKeys(username);
