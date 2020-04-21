@@ -7,12 +7,6 @@ pipeline {
       }
     }
 
-    stage('Inspection') {
-      steps {
-        echo 'Test execution'
-      }
-    }
-
     stage('Test') {
       steps {
         bat(script: 'mvn test', label: 'maven command', returnStatus: true)
