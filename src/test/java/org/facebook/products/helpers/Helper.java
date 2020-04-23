@@ -92,9 +92,9 @@ class Helper {
         HashMap<Integer, Integer> Map =
                 new HashMap<Integer, Integer>();
         for (int i = 0; i < n; i++)
-            Map.put(new Integer(array1[i]), new Integer(1));
+            Map.put(array1[i], 1);
         for (int i = 0; i < m; i++)
-            Map.put(new Integer(array2[i]), new Integer(0));
+            Map.put(array2[i], 0);
 
         for (int i = 0; i < n; i++)
             if (Map.get(array1[i]) == 1)
