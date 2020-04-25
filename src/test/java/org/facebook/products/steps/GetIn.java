@@ -3,6 +3,7 @@ package org.facebook.products.steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.facebook.products.pages.Launcher;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -27,7 +28,9 @@ public class GetIn {
 
     @When("I click on {string} button")
     public void i_click_on_login_button(String login) {
-        Hooks.driver.findElement(By.linkText(login)).click();
+        //Hooks.driver.findElement(By.linkText(login)).click();
+        Launcher launcher = new Launcher(Hooks.driver);
+        launcher.poplogin();
         System.out.println("triggered Log In");
     }
 

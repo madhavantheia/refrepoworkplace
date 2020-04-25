@@ -9,5 +9,6 @@ public class PageObject {
     public PageObject(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        System.out.println("using POM; pages.PageObject.java.constructor");
     }
 }
