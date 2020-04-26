@@ -13,7 +13,7 @@ public class Receipt extends PageObject {
         super(driver);
     }
 
-    public String confirmationHeader(){
+    public String confirmationHeader() {
         return header.getText();
     }
 }

@@ -6,9 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 public class PageObject {
     protected WebDriver driver;
 
-    public PageObject(WebDriver driver){
+    public PageObject(WebDriver driver) {
         this.driver = driver;
+        //@FindBy is assigning or defining the webelement, initElements instantiates the element
         PageFactory.initElements(driver, this);
-        System.out.println("using POM; pages.PageObject.java.constructor");
+        System.out.println("\nusing POM; pages.PageObject.constructor\n");
     }
 }

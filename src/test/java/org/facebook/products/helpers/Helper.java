@@ -1,6 +1,7 @@
 package org.facebook.products.helpers;
 
 // Example for helper class
+
 import java.lang.*;
 import java.util.*;
 
@@ -9,8 +10,7 @@ class Helper {
     // to check whether integer is greater than 0 or not
     // usually used when we have to input a whole number
     // like taking input of number of test cases etc
-    public static boolean isValidInteger(int test)
-    {
+    public static boolean isValidInteger(int test) {
         return (test >= 0);
     }
 
@@ -26,8 +26,7 @@ class Helper {
     public static int getInRange(int low) {
         Scanner sc = new Scanner(System.in);
         int test;
-        do
-        {
+        do {
             test = sc.nextInt();
         } while (test < low);
 
@@ -140,7 +139,7 @@ class Helper {
         if (n == 2)
             return true;
 
-        int squareRoot = (int)Math.sqrt(n);
+        int squareRoot = (int) Math.sqrt(n);
         for (int i = 1; i <= squareRoot; i++)
             if (n % i == 0 && i != 1)
                 return false;
@@ -150,7 +149,7 @@ class Helper {
     // Returns nthPrimeNumber
     public static int nthPrimeNumber(int n) {
         int k = 0;
-        for (int i = 2;; i++) {
+        for (int i = 2; ; i++) {
             if (isPrime(i))
                 k++;
             if (k == n)
@@ -189,7 +188,9 @@ class Helper {
         // Checking whether s1Array and s2Array are equal
         return (Arrays.equals(s1Array, s2Array));
     }
-} /*** end of helperClass **/
+}
+
+/*** end of helperClass **/
 
 class Test {
     public static void main(String[] args) {

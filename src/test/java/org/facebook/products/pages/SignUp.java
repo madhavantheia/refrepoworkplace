@@ -6,26 +6,26 @@ import org.openqa.selenium.support.FindBy;
 
 public class SignUp extends PageObject {
 
-    @FindBy(id="firstname")
+    @FindBy(id = "firstname")
     private WebElement firstName;
 
-    @FindBy(id="lastname")
+    @FindBy(id = "lastname")
     private WebElement lastName;
 
-    @FindBy(id="address")
+    @FindBy(id = "address")
     private WebElement address;
 
-    @FindBy(id="zipcode")
+    @FindBy(id = "zipcode")
     private WebElement zipCode;
 
-    @FindBy(id="signup")
+    @FindBy(id = "signup")
     private WebElement submitButton;
 
     public SignUp(WebDriver driver) {
         super(driver);
     }
 
-    public void enterName(String firstName, String lastName){
+    public void enterName(String firstName, String lastName) {
         this.firstName.clear();
         this.firstName.sendKeys(firstName);
 
@@ -33,7 +33,7 @@ public class SignUp extends PageObject {
         this.lastName.sendKeys(lastName);
     }
 
-    public void enterAddress(String address, String zipCode){
+    public void enterAddress(String address, String zipCode) {
         this.address.clear();
         this.address.sendKeys(address);
 
@@ -41,7 +41,7 @@ public class SignUp extends PageObject {
         this.zipCode.sendKeys(zipCode);
     }
 
-    public Receipt submit(){
+    public Receipt submit() {
         submitButton.click();
         return new Receipt(driver);
     }

@@ -1,20 +1,36 @@
 package org.facebook.products.pages;
 
+import org.facebook.products.steps.Hooks;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class Launcher extends PageObject {
 
     @FindBy(linkText = "Log In")
-    private WebElement loginbutton;
+    private WebElement loginButton;
 
     public Launcher(WebDriver driver) {
         super(driver);
     }
 
-    public void poplogin() {
-        System.out.println("Using POM; pages.Launcher.java.poplogin.loginbutton.click");
-        loginbutton.click();
+    /**
+     * Illustration of static import
+     * visibilityOf doesn't mention the class ExpectedConditions
+     */
+
+    public void checkLoginButton() {
+        Hooks.wait.until(visibilityOf(loginButton));
+        Assert.assertTrue((loginButton.isDisplayed()), "\"Log In\" button is not available");
+        System.out.println("\nLog In link is available\n");
+        System.out.println("\nUsing POM; pages.Launcher.checkLoginButton\n");
+    }
+
+    public void popLogin() {
+        loginButton.click();
+        System.out.println("\nUsing POM; pages.Launcher.popLogin\n");
     }
 }

@@ -6,14 +6,12 @@ import org.testng.annotations.Test;
 /**
  * Unit test for simple App.
  */
-public class HingeTestng
-{
+public class HingeTestng {
     /**
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
-    {
+    public void shouldAnswerWithTrue() {
         Assert.assertTrue(true);
     }
 }

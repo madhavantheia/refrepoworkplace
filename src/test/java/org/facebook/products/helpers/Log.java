@@ -8,8 +8,7 @@ import java.util.logging.Logger;
 
 public class Log {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
 
         // Create a Logger
         Logger logger
