@@ -10,8 +10,21 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class Launcher extends PageObject {
 
+    /**
+     * Attribute value for linkText should be constant
+     * so we can't pass a element property from feature file
+     * or from step definition class for validation or other purposes
+     *
+     * private WebElement LoginButton
+     * shows up warning "private variable isn't assigned"
+     * so removed the modified private
+     * and error cleared
+     *
+     * use this.loginButton in-case of ambiguity
+     */
+
     @FindBy(linkText = "Log In")
-    private WebElement loginButton;
+    WebElement loginButton;
 
     public Launcher(WebDriver driver) {
         super(driver);

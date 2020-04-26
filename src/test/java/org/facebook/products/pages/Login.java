@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class Login extends PageObject {
 
     @FindBy(name = "pass")
-    private WebElement passwordField;
+    WebElement passwordField;
 
     @FindBy(id = "u_0_9")
-    private WebElement submitButton;
+    WebElement submitButton;
 
     public Login(WebDriver driver) {
         super(driver);

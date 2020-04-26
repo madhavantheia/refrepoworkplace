@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class CompanySelector extends PageObject {
 
     @FindBy(name = "email")
-    private WebElement emailField;
+    WebElement emailField;
 
     @FindBy(xpath = "//button[@value='1']")
-    private WebElement continueButton;
+    WebElement continueButton;
 
     public CompanySelector(WebDriver driver) {
         super(driver);

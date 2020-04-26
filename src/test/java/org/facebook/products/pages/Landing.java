@@ -9,7 +9,7 @@ import org.testng.Assert;
 public class Landing extends PageObject {
 
     @FindBy(xpath = "//*[@id=\"u_0_1\"]/div/div/div/div/div/div[2]/div[2]/div[2]/header/div/div/div[1]/div[2]/div/h1/span")
-    private WebElement newsFeedLabel;
+    WebElement newsFeedLabel;
 
     public Landing(WebDriver driver) {
         super(driver);
