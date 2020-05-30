@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.facebook.products.pages.CompanySelector;
-import org.facebook.products.pages.Landing;
+import org.facebook.products.pages.Home;
 import org.facebook.products.pages.Launcher;
 import org.facebook.products.pages.Login;
 
@@ -15,7 +15,7 @@ public class GetIn {
     Launcher launcher;
     CompanySelector companySelector;
     Login login;
-    Landing landing;
+    Home home;
 
     @Given("I am on Workplace portal using url {string}")
     public void i_am_on_Workplace_portal_using_url(String url) {
@@ -95,9 +95,9 @@ public class GetIn {
      */
 
     @When("Submit my password {string}")
-    public void submit_my_password(String pwd) {
+    public void submit_my_password(String password) {
         login = new Login(Hooks.driver);
-        login.submitPassword(pwd);
+        login.submitPassword(password);
     }
 
     /**
@@ -116,7 +116,13 @@ public class GetIn {
 
     @Then("I should be able to view my News Feed")
     public void i_should_be_able_to_view_my_News_Feed() {
-        landing = new Landing(Hooks.driver);
-        landing.validateNewsFeed();
+        home = new Home(Hooks.driver);
+        home.validateNewsFeed();
+    }
+
+    @Then("I should not see you aren't logged in")
+    public void i_should_not_see_you_aren_t_logged_in() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
 }

@@ -6,12 +6,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class Landing extends PageObject {
+public class Home extends PageObject {
 
     @FindBy(xpath = "//*[@id=\"u_0_1\"]/div/div/div/div/div/div[2]/div[2]/div[2]/header/div/div/div[1]/div[2]/div/h1/span")
     WebElement newsFeedLabel;
 
-    public Landing(WebDriver driver) {
+    @SuppressWarnings("SpellCheckingInspection")
+    @FindBy(name = "xhpc_message_text")
+    WebElement createPostEditor;
+
+    @FindBy(xpath = "//span[.='General']")
+    WebElement generalGroup;
+
+    public Home(WebDriver driver) {
         super(driver);
     }
 
@@ -24,5 +31,13 @@ public class Landing extends PageObject {
             Hooks.verificationErrors.append("\n\n").append(ae.toString());
         }
         System.out.println("\nUsing POM; pages.Landing.validateNewsFeed\n");
+    }
+
+    public void postStatus() {
+        createPostEditor.click();
+        generalGroup.click();
+
+
+
     }
 }
