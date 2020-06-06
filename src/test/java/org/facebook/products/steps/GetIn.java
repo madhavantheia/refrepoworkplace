@@ -39,7 +39,7 @@ public class GetIn {
     @Then("Log In button should be available")
     public void login_button_should_be_available() {
         launcher = new Launcher(Hooks.driver);
-        launcher.checkLoginButton();
+        launcher.checkForLoginButton();
     }
 
     /**

@@ -35,7 +35,7 @@ public class Launcher extends PageObject {
      * visibilityOf doesn't mention the class ExpectedConditions
      */
 
-    public void checkLoginButton() {
+    public void checkForLoginButton() {
         Hooks.wait.until(visibilityOf(loginButton));
         Assert.assertTrue((loginButton.isDisplayed()), "\"Log In\" button is not available");
         System.out.println("\nLog In link is available\n");
