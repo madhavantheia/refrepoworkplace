@@ -3,10 +3,11 @@ package org.facebook.products.runner;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-/* Entire code from AbstractTestNGCucumberTests has to be implemented in here
-though we chose a nack approach of extending it
-For better understanding go through AbstractTestNGCucumberTests.class, TestNGCucumberRunner.java & CucumberOptions.java
-all are available in io.cucumber.testng
+/**
+ * Entire code from AbstractTestNGCucumberTests has to be implemented in here
+ * though we chose a nack approach of extending it
+ * For better understanding go through AbstractTestNGCucumberTests.class, TestNGCucumberRunner.java & CucumberOptions.java
+ * all are available in io.cucumber.testng
  */
 
 @CucumberOptions(
