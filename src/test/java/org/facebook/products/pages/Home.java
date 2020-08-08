@@ -1,7 +1,6 @@
 package org.facebook.products.pages;
 
 import org.facebook.products.steps.Hooks;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,7 +49,7 @@ public class Home extends PageObject {
      *
      * examine below throws exception handling in documentation comments
      *
-     * @throws InterruptedException
+     * @throws InterruptedException if the execution is interrupted
      */
 
     public void postStatus() throws InterruptedException {
@@ -62,7 +61,7 @@ public class Home extends PageObject {
         Hooks.wait.until(ExpectedConditions.visibilityOf(messageEditor));
         messageEditor.click();
         System.out.println("message editor clicked");
-        messageEditor.sendKeys("Posted using robotizing script 18-June");
+        messageEditor.sendKeys("Posted using robotizing script Aug-8");
         System.out.println("Message typed");
         postButton.click();
         Thread.sleep(5000);
