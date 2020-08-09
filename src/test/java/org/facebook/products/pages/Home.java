@@ -30,10 +30,10 @@ public class Home extends PageObject {
     }
 
     public void validateNewsFeed() {
-        String labelname = newsFeedLabel.getText();
-        System.out.println(labelname);
+        String labelName = newsFeedLabel.getText();
+        System.out.println(labelName);
         try {
-            Assert.assertTrue(labelname.contains("News Feed"), "\"News Feed\" not available");
+            Assert.assertTrue(labelName.contains("News Feed"), "\"News Feed\" not available");
         } catch (AssertionError ae) {
 
             Hooks.verificationErrors.append("\n\n").append(ae.toString());
