@@ -15,7 +15,7 @@ public class Browser {
         driver.get("https://www.workplace.com/");
         String title = driver.getTitle();
         System.out.println(title);
-        Assert.assertTrue(title.contains("Workplace from Facebook: A Work Collaboration Tool"));
+        Assert.assertTrue(title.contains("Communication tools for business | Workplace from Facebook"));
     }
 
     @BeforeTest
