@@ -30,6 +30,8 @@ public class Home extends PageObject {
     }
 
     public void validateNewsFeed() {
+        Hooks.wait.until(ExpectedConditions.visibilityOf(newsFeedLabel));
+
         String labelName = newsFeedLabel.getText();
         System.out.println(labelName);
         try {
@@ -38,7 +40,7 @@ public class Home extends PageObject {
 
             Hooks.verificationErrors.append("\n\n").append(ae.toString());
         }
-        System.out.println("\nUsing POM; pages.Landing.validateNewsFeed\n");
+        System.out.println("\nUsing POM; pages.Home.validateNewsFeed\n");
     }
 
     /***

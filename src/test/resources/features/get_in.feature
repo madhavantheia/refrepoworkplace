@@ -3,10 +3,13 @@
     As a workplace user, I would like to access my News Feed
     * signs into the application
     * negative scenarios are yet to be written
+    # '*' is for list of things, kind of bullet points
 
-  Background: Jump to workplace portal and confirm Log In button presence
-    Given I am on Workplace portal using url "https://www.workplace.com"
-    Then Log In button should be available
+  Background: Availing the user specific Logon web-link
+    # The Tool has new way of authentication using activation codes
+    # as a workaround, we use distinctive URL particular to the account
+    Given I am on SignOn page using "https://ypgdtsmjgh.workplace.com/work/landing/input/"
+    Then Title should be "Log in to Workplace"
 
   @Successfullogin
   Scenario: Successful login
@@ -14,9 +17,8 @@
     Signing in with a valid username
     and password
     """
-    When I click on Log In button
-    And Submit my username "madhavan.profession@gmail.com"
-    And Submit my password "context@13"
+    When I submit my username "qualitymanageribm@gmail.com"
+    And Submit password "QAmanager@05"
     Then I should be able to view my News Feed
-    But I should not see you aren't logged in
+    But not the error page
     # last "But" step yet to be implemented - pending exception
