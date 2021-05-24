@@ -11,7 +11,7 @@ public class PasswordSubmission extends PageObject{
     @FindBy(name = "pass")
     WebElement passwordField;
 
-    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div/div/div[2]/div[3]/form/div[5]/button")
+    @FindBy(xpath = "//button[@value='1']")
     WebElement pwdContinueButton;
 
     public PasswordSubmission(WebDriver driver) {

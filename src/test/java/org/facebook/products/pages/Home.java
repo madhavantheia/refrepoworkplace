@@ -38,7 +38,7 @@ public class Home extends PageObject {
             Assert.assertTrue(labelName.contains("News Feed"), "\"News Feed\" not available");
         } catch (AssertionError ae) {
 
-            Hooks.verificationErrors.append("\n\n").append(ae.toString());
+            Hooks.verificationErrors.append("\n\n").append(ae);
         }
         System.out.println("\nUsing POM; pages.Home.validateNewsFeed\n");
     }

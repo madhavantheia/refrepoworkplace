@@ -7,8 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
-
 public class DistinctiveLogin extends PageObject {
 
     /**
@@ -18,7 +16,7 @@ public class DistinctiveLogin extends PageObject {
     @FindBy(name = "email")
     WebElement emailField;
 
-    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div/div[2]/div/div[2]/div[1]/form[1]/div[2]/button")
+    @FindBy(xpath = "//button[@value='1']")
     WebElement continueButton;
 
     public DistinctiveLogin(WebDriver driver) {
@@ -31,7 +29,6 @@ public class DistinctiveLogin extends PageObject {
      */
 
     public void verifyPageTitle(String pageTitle) {
-        // Hooks.wait.until(visibilityOf(continueButton));
         String titlenow = driver.getTitle();
         System.out.println(titlenow);
         Assert.assertTrue(pageTitle.contains(titlenow));
