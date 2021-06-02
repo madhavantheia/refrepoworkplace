@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import org.facebook.products.pages.Home;
 import org.facebook.products.pages.DistinctiveLogin;
 import org.facebook.products.pages.PasswordSubmission;
+
 import java.time.Instant;
 
 public class GetIn {
@@ -35,7 +36,7 @@ public class GetIn {
     }
 
     @Then("Title should be {string}")
-    public void title_should_be (String pageTitle) {
+    public void title_should_be(String pageTitle) {
         distinctiveLogin = new DistinctiveLogin(Hooks.driver);
         distinctiveLogin.verifyPageTitle(pageTitle);
     }
@@ -108,12 +109,6 @@ public class GetIn {
     public void i_should_be_able_to_view_my_news_feed() {
         home = new Home(Hooks.driver);
         home.validateNewsFeed();
-    }
-
-    @Then("not the error page")
-    public void not_the_error_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
     }
 
 }
