@@ -2,7 +2,6 @@ package org.facebook.products.pages;
 
 import org.facebook.products.steps.Hooks;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -15,17 +14,17 @@ public class Home extends PageObject {
     @FindBy(xpath = "//span[.='News Feed']")
     WebElement newsFeedLabel;
 
-    @SuppressWarnings("SpellCheckingInspection")
     @FindBy(xpath = "//span[.='Write something...']")
     WebElement createPostEditor;
 
     @SuppressWarnings("SpellCheckingInspection")
-    @FindBy(xpath = "//span[.='Scriptures'] [@class='oecdyzpx qbbcxcfp ib0kwflm']")
-    WebElement listofscriptures;
+    @FindBy(xpath = "//span[.='Everyone @ spacex'] [@class='oecdyzpx qbbcxcfp ib0kwflm']")
+    WebElement everyoneAtSpacexElementsOnPage;
 
-    @FindBy(id="489622505488337")
-    WebElement scripturesGroup;
+    @FindBy(id="243731967089266")
+    WebElement everyoneAtSpacex;
 
+    @SuppressWarnings("SpellCheckingInspection")
     @FindBy(xpath = "//div[@class='notranslate _5rpu'] [@role='textbox'] [@aria-label='What are you working on?']")
     WebElement messageEditor;
 
@@ -64,39 +63,39 @@ public class Home extends PageObject {
     public void postStatus() throws InterruptedException {
         createPostEditor.click();
         System.out.println("Clicked on write something...");
-        Hooks.wait.until(ExpectedConditions.visibilityOf(scripturesGroup));
+        Hooks.wait.until(ExpectedConditions.visibilityOf(everyoneAtSpacex));
         // Thread.sleep(5000);
-        List<WebElement> sameClassnamelist =listofscriptures.findElements(By.xpath("//span[(.='Scriptures')][(@class='oecdyzpx qbbcxcfp ib0kwflm')]"));
-        System.out.println("Number of elements:" +sameClassnamelist.size());
+        List<WebElement> identicalElements =everyoneAtSpacexElementsOnPage.findElements(By.xpath("//span[(.='Everyone @ spacex')][(@class='oecdyzpx qbbcxcfp ib0kwflm')]"));
+        System.out.println("Number of elements:" +identicalElements.size());
 
-        for (int i=0; i<sameClassnamelist.size();i++) {
-            System.out.println("Element: " + sameClassnamelist.get(i).getAttribute("src"));
-            System.out.println("Element: " + sameClassnamelist.get(i).getAttribute("class"));
-            System.out.println("Element: " + sameClassnamelist.get(i).getLocation());
-            System.out.println("Element: " + sameClassnamelist.get(i).getText());
-            System.out.println("Element: " + sameClassnamelist.get(i).getSize());
+        for (WebElement webElement : identicalElements) {
+            System.out.println("Element: " + webElement.getAttribute("src"));
+            System.out.println("Element: " + webElement.getAttribute("class"));
+            System.out.println("Element: " + webElement.getLocation());
+            System.out.println("Element: " + webElement.getText());
+            System.out.println("Element: " + webElement.getSize());
             System.out.println("\n----------------------\n");
         }
 
-        System.out.println(scripturesGroup.isDisplayed());
+        System.out.println(everyoneAtSpacex.isDisplayed());
         //Thread.sleep(5000);
-        System.out.println(scripturesGroup.getCssValue("font-size"));
-        System.out.println(scripturesGroup.getLocation());
+        System.out.println(everyoneAtSpacex.getCssValue("font-size"));
+        System.out.println(everyoneAtSpacex.getLocation());
         System.out.println("After breakpoint hit");
         System.out.println("Second line of breakpoint");
-        Hooks.wait.until(ExpectedConditions.elementToBeClickable(scripturesGroup));
+        Hooks.wait.until(ExpectedConditions.elementToBeClickable(everyoneAtSpacex));
         System.out.println("Scriptures ready to be clicked");
-        scripturesGroup.click();
+        everyoneAtSpacex.click();
 
         /*
-        scripturesGroup.sendKeys(Keys.ENTER);
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
-        jse.executeScript("arguments[0].click()", scripturesGroup);
-        Thread.sleep(5000);
-        System.out.println("Scriptures group click action triggered");
-        Actions actions = new Actions(driver);
-        actions.moveToElement(scripturesGroup).click().perform();
-         */
+         scripturesGroup.sendKeys(Keys.ENTER);
+         JavascriptExecutor jse = (JavascriptExecutor)driver;
+         jse.executeScript("arguments[0].click()", scripturesGroup);
+         Thread.sleep(5000);
+         System.out.println("Scriptures group click action triggered");
+         Actions actions = new Actions(driver);
+         actions.moveToElement(scripturesGroup).click().perform();
+        */
 
         System.out.println("Scriptures group selected");
         //Thread.sleep(5000);
