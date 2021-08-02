@@ -6,17 +6,7 @@ import io.cucumber.java.en.When;
 import org.facebook.products.pages.Home;
 import org.facebook.products.pages.DistinctiveLogin;
 import org.facebook.products.pages.PasswordSubmission;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.io.FileHandler;
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 
 public class GetIn {
 
@@ -42,32 +32,11 @@ public class GetIn {
         System.out.println(Instant.now());
         Hooks.driver.get(url);
         System.out.println(Instant.now());
-        LocalDateTime datetimeobj = LocalDateTime.now();
-        String dtf = datetimeobj.truncatedTo(ChronoUnit.SECONDS).format(DateTimeFormatter.ISO_DATE_TIME);
-        String LandingpageShot = "LandingpageShot"+datetimeobj;
-        LandingpageShot = LandingpageShot.replaceAll("[^a-zA-Z0-9' ']", "");
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        String dirName = "Screenshots";
-        Files.list(new File(dirName).toPath())
-                .limit(10)
-                .forEach(path -> {
-                    System.out.println(path);
-                });
-        takeSnapShot(Hooks.driver, ".\\Screenshots\\"+LandingpageShot+".png") ;
         distinctiveLogin = new DistinctiveLogin(Hooks.driver);
-        // distinctiveLogin.setEnglishLanguage();
-    }
-
-    public static void takeSnapShot(WebDriver driver, String fileWithPath) throws Exception{
-
-        TakesScreenshot scrShot =((TakesScreenshot)driver);
-        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-        File DestFile=new File(fileWithPath);
-        FileHandler.copy(SrcFile, DestFile);
     }
 
     @Then("Title should be {string}")
-    public void title_should_be(String pageTitle) {
+    public void title_should_be(String pageTitle) throws Exception {
         distinctiveLogin.verifyPageTitle(pageTitle);
     }
 

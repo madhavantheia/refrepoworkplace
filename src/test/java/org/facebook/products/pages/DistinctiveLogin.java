@@ -1,11 +1,20 @@
 package org.facebook.products.pages;
 
 import org.facebook.products.steps.Hooks;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+
+import java.io.File;
+import java.nio.file.Files;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class DistinctiveLogin extends PageObject {
 
@@ -36,11 +45,32 @@ public class DistinctiveLogin extends PageObject {
      * englishLanguage.click();
      * }
      */
-    public void verifyPageTitle(String pageTitle) {
+    public void verifyPageTitle(String pageTitle) throws Exception {
+        LocalDateTime datetimeobj = LocalDateTime.now();
+        String dtf = datetimeobj.truncatedTo(ChronoUnit.SECONDS).format(DateTimeFormatter.ISO_DATE_TIME);
+        String LandingpageShot = "LandingpageShot"+dtf;
+        LandingpageShot = LandingpageShot.replaceAll("[^a-zA-Z0-9' ']", "");
+        System.out.println("Working Directory = " + System.getProperty("user.dir") + "\n");
+        takeSnapShot(Hooks.driver, ".\\Screenshots\\"+LandingpageShot+".png") ;
+        String dirName = "Screenshots";
+        Files.list(new File(dirName).toPath())
+                .limit(10)
+                .forEach(path -> {
+                    System.out.println(path);
+                });
+        System.out.println("\n");
+        // distinctiveLogin.setEnglishLanguage();
         String titlenow = driver.getTitle();
         System.out.println(titlenow);
         Assert.assertTrue(pageTitle.contains(titlenow));
         System.out.println("\nUsing POM; pages.DistinctiveLogin.verifyPageTitle\n");
+    }
+    public static void takeSnapShot(WebDriver driver, String fileWithPath) throws Exception{
+
+        TakesScreenshot scrShot =((TakesScreenshot)driver);
+        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+        File DestFile=new File(fileWithPath);
+        FileHandler.copy(SrcFile, DestFile);
     }
 
     public void submitUsername(String username) {
