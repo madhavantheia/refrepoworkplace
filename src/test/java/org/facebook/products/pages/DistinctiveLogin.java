@@ -19,11 +19,9 @@ import java.time.temporal.ChronoUnit;
 public class DistinctiveLogin extends PageObject {
 
     /**
-     * use this.continueButton in-case of ambiguity
+     * // @FindBy(linkText = "English (US)")
+     * WebElement englishLanguage;
      */
-
-    @FindBy(linkText = "English (US)")
-    WebElement englishLanguage;
 
     @FindBy(name = "email")
     WebElement emailField;
@@ -48,16 +46,14 @@ public class DistinctiveLogin extends PageObject {
     public void verifyPageTitle(String pageTitle) throws Exception {
         LocalDateTime datetimeobj = LocalDateTime.now();
         String dtf = datetimeobj.truncatedTo(ChronoUnit.SECONDS).format(DateTimeFormatter.ISO_DATE_TIME);
-        String LandingpageShot = "LandingpageShot"+dtf;
-        LandingpageShot = LandingpageShot.replaceAll("[^a-zA-Z0-9' ']", "");
+        String LandingPageShot = "LandingPageShot"+dtf;
+        LandingPageShot = LandingPageShot.replaceAll("[^a-zA-Z0-9]", "");
         System.out.println("Working Directory = " + System.getProperty("user.dir") + "\n");
-        takeSnapShot(Hooks.driver, ".\\Screenshots\\"+LandingpageShot+".png") ;
+        takeSnapShot(Hooks.driver, ".\\Screenshots\\"+LandingPageShot+".png") ;
         String dirName = "Screenshots";
         Files.list(new File(dirName).toPath())
                 .limit(10)
-                .forEach(path -> {
-                    System.out.println(path);
-                });
+                .forEach(System.out::println);
         System.out.println("\n");
         // distinctiveLogin.setEnglishLanguage();
         String titlenow = driver.getTitle();
@@ -72,6 +68,10 @@ public class DistinctiveLogin extends PageObject {
         File DestFile=new File(fileWithPath);
         FileHandler.copy(SrcFile, DestFile);
     }
+
+    /**
+     * use this.continueButton in-case of ambiguity
+     */
 
     public void submitUsername(String username) {
         Hooks.wait.until(ExpectedConditions.visibilityOf(emailField));
