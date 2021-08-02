@@ -12,12 +12,12 @@
     as a workaround, we use distinctive URL particular to the account
     it works only for qualitymanageribm@gmail.com, any other id will show up error"""
 
-    Given I am on SignOn page using "https://spacex240.workplace.com/work/landing/input/"
-    Then Title should be "Log in to Workplace"
+    Given I am on SignOn page using "https://virgingalactic662.workplace.com/"
+    Then Title should be "Log into Workplace"
 
   @Successfullogin
   Scenario: Successful login
 
-    When I submit my username "toolsinceptor@gmail.com"
-    And Submit password "toolsinceptor@1706"
+    When I submit my username "malutrevejopeach@gmail.com"
+    And Submit password "Malupeach@21"
     Then I should be able to view my News Feed

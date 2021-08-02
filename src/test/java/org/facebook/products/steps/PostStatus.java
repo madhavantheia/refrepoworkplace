@@ -15,12 +15,10 @@ public class PostStatus {
     GetIn getin;
 
     @Given("I submit my credentials on workplace.com with {string} and {string} using url {string}")
-    public void i_submit_my_credentials_on_workplace_com_with_and(String username, String pwd, String url) {
-        String pageTitle = "Log in to Workplace";
+    public void i_submit_my_credentials_on_workplace_com_with_and(String username, String pwd, String url) throws Exception {
         getin = new GetIn();
         getin.i_am_on_signon_page_using(url);
         distinctiveLogin = new DistinctiveLogin(Hooks.driver);
-        distinctiveLogin.verifyPageTitle(pageTitle);
         distinctiveLogin.submitUsername(username);
         passwordSubmission = new PasswordSubmission(Hooks.driver);
         passwordSubmission.submitPassword(pwd);

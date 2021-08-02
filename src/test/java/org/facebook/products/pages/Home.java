@@ -18,10 +18,10 @@ public class Home extends PageObject {
     WebElement createPostEditor;
 
     @SuppressWarnings("SpellCheckingInspection")
-    @FindBy(xpath = "//span[.='Everyone @ spacex'] [@class='oecdyzpx qbbcxcfp ib0kwflm']")
+    @FindBy(xpath = "//span[.='Everyone @ Virgin Galactic'] [@class='oecdyzpx qbbcxcfp ib0kwflm']")
     WebElement everyoneAtSpacexElementsOnPage;
 
-    @FindBy(id="243731967089266")
+    @FindBy(id="254970569423591")
     WebElement everyoneAtSpacex;
 
     @SuppressWarnings("SpellCheckingInspection")

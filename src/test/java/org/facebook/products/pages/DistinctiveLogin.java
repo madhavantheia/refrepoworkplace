@@ -13,6 +13,9 @@ public class DistinctiveLogin extends PageObject {
      * use this.continueButton in-case of ambiguity
      */
 
+    @FindBy(linkText = "English (US)")
+    WebElement englishLanguage;
+
     @FindBy(name = "email")
     WebElement emailField;
 
@@ -28,6 +31,11 @@ public class DistinctiveLogin extends PageObject {
      * visibilityOf doesn't mention the class ExpectedConditions
      */
 
+    /*
+     * public void setEnglishLanguage() {
+     * englishLanguage.click();
+     * }
+     */
     public void verifyPageTitle(String pageTitle) {
         String titlenow = driver.getTitle();
         System.out.println(titlenow);
