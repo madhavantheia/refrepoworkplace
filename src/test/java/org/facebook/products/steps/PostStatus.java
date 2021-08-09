@@ -15,7 +15,7 @@ public class PostStatus {
     GetIn getin;
 
     @Given("I submit my credentials on workplace.com with {string} and {string} using url {string}")
-    public void i_submit_my_credentials_on_workplace_com_with_and(String username, String pwd, String url) throws Exception {
+    public void i_submit_my_credentials_on_workplace_com_with_and(String username, String pwd, String url) {
         getin = new GetIn();
         getin.i_am_on_signon_page_using(url);
         distinctiveLogin = new DistinctiveLogin(Hooks.driver);
@@ -38,6 +38,7 @@ public class PostStatus {
 
     @Then("It should appear in the News Feed")
     public void it_should_appear_in_the_News_Feed() {
+        
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }

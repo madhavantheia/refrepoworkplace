@@ -28,7 +28,7 @@ public class GetIn {
      */
 
     @Given("I am on SignOn page using {string}")
-    public void i_am_on_signon_page_using(String url) throws Exception {
+    public void i_am_on_signon_page_using(String url) {
         System.out.println(Instant.now());
         Hooks.driver.get(url);
         System.out.println(Instant.now());
@@ -44,9 +44,9 @@ public class GetIn {
      * Hooks.driver.findElement(By.linkText(login)).click();
      *
      * launcher = new Launcher(Hooks.driver);
-     * has been removed since its been instantiated already in prior step
+     * has been removed since it's been instantiated already in prior step
      * as a result, in execution logs
-     * "pages.PageObject.constructor will not be present this time around
+     * pages.PageObject.constructor will not be present this time around
      *
      * Illustration of javadoc comment Tags "param"
      * click on login below
@@ -65,9 +65,9 @@ public class GetIn {
      *
      * Hooks.wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("email")));
      * Hooks.driver.findElement(By.name("email")).clear();
-     * Hooks.driver.findElement(By.name("email")).sendKeys(username);
+      * Hooks.driver.findElement(By.name("email")).sendKeys(username);
      * Hooks.driver.findElement(By.xpath("//button[@value='1']")).click();
-     * or By.className("ibm-btn-pri) or By.className("ibm-btn-blue-50") cause it has 2 classes for this button
+     * or By.className("ibm-btn-pri) or By.className("ibm-btn-blue-50") because it has 2 classes for this button
      *
      * @param username
      * Parameter from feature file
