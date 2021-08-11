@@ -24,6 +24,7 @@ public class PostStatus {
         passwordSubmission.submitPassword(pwd);
     }
 
+
     @Then("I should be able to view my portal")
     public void i_should_be_able_to_view_my_portal() {
         home = new Home(Hooks.driver);
